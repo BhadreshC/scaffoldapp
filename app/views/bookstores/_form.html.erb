@@ -1,0 +1,53 @@
+<%= form_with(model: bookstore, local: true) do |form| %>
+  <% if bookstore.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bookstore.errors.count, "error") %> prohibited this bookstore from being saved:</h2>
+
+      <ul>
+        <% bookstore.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+
+  <% end %>
+
+
+
+
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author %>
+    <%= form.text_field :author %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+  </div>
+      
+
+    <div class="field">
+    <%= form.label :EmailAddress %>
+    <%= form.email_field :EmailAddress, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :publishedyear %>
+    <%= form.number_field :publishedyear %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ISBN %>
+    <%= form.text_field :ISBN %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
