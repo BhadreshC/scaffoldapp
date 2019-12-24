@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  #after_action :redirect_user_to_bookstore ,only: [:index, :show]
 
   # GET /users
   def index
@@ -25,7 +26,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_url, notice: 'User was successfully created.'
+      redirect_to bookstores_url, notice: 'User was successfully created.'
     else
       render :new
     end
@@ -56,4 +57,6 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:username, :email, :password, :password_confirmation)
     end
+
+    
 end

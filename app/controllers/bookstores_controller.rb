@@ -2,7 +2,7 @@ class BookstoresController < ApplicationController
 
 
 
-
+  before_action :check_session
   before_action :set_bookstore, only: [:show, :edit, :update, :destroy]
 
   # GET /bookstores
@@ -83,6 +83,18 @@ class BookstoresController < ApplicationController
     def bookstore_params
       params.require(:bookstore).permit(:title, :author, :price, :EmailAddress, :publishedyear, :ISBN)
     end
+
+
+    def check_session
+      if session[:user_id]
+          #
+         # puts "bhadftgghjbghjhhkjhkjhhkjhkjhkhjh"
+          #redirect_to 
+      else  
+          redirect_to  page_index_url, notice: 'login is required.' 
+      end 
+    end
+    
 end
 
 

@@ -7,11 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])   
       session[:user_id] = user.id   
       redirect_to bookstores_url, notice: 'Logged in!'
-
-
-
-
-
+      
     else   
       render :new   
   	end
@@ -19,6 +15,5 @@ class SessionsController < ApplicationController
   def destroy
   	session[:user_id] = nil   
     redirect_to root_url, notice: 'Logged out!'   
-
   end
 end

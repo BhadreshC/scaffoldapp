@@ -2,6 +2,16 @@
 
 
 
+<% if session[:user_id]? %>
+<div id="error_expanation">Seems like you already have an account with us.
+  <% link_to "Sign in now", login %></div>
+<% end %>
+
+
+
+
+
+
 <p>
   <strong>Title:</strong>
   <%= @bookstore.title %>
