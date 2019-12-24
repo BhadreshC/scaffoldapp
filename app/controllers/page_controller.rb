@@ -17,9 +17,10 @@ class PageController < ApplicationController
         # redirect_to "http://www.rubyonrails.org"
  		
       	else  
-          	 puts "--------------------------------------------sessioin is no more ------------------------------------------------------	"
+          	 puts "	--------------------------------------------sessioin is no more ------------------------------------------------------	"
         end 
   	end	
 
 end
+ 
  

@@ -39,7 +39,7 @@ class BookstoresController < ApplicationController
 
     respond_to do |format|
       if @bookstore.save
-        format.html { redirect_to @bookstore, notice: 'Bookstore was successfully created.' }
+        format.html { redirect_to @bookstore, notice:  'Bookstore was successfully created.' }
         puts @bookstore.as_json 
         format.json { render :show, status: :created, location: @bookstore }
       else
