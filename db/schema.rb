@@ -12,19 +12,23 @@
 
 ActiveRecord::Schema.define(version: 2019_12_23_110842) do
 
-  create_table "bookstores", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "bookstores", force: :cascade do |t|
     t.string "title"
     t.string "author"
     t.integer "price"
     t.integer "publishedyear"
     t.string "ISBN"
+    t.string "EmailAddress"
+    t.string "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "EmailAddress"
     t.string "slug"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
     t.string "password_digest"

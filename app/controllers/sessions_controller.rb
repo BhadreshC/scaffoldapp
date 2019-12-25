@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
   def create
   	user = User.find_by_email(params[:email])   
     if user && user.authenticate(params[:password])   
-      session[:user_id] = user.id   
+      session[:user_id] = user.id     
       #cookies[:email] = {:value => params[:email] , :expires => 2.weeks.from_now }
       cookies[:email] = {:value => params[:email] , :expires => 2.minutes}
       cookies[:password]=  {:value => params[:password] , :expires => 2.minutes }
