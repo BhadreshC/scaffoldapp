@@ -1,3 +1,3 @@
 class Author < ApplicationRecord
-	 has_many :bookstores
+	has_many :bookstores
 end
