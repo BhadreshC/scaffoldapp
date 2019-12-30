@@ -35,17 +35,17 @@ class SessionsController < ApplicationController
 
 
   private 
-  def check_session_for_new_loign
-      if session[:user_id]
-        redirect_to bookstores_url, notice: 'You are Already Login'
-      else  
-         # redirect_to  page_index_url, alert: 'login is required.' 
-         #edirect_to bookstores_url
-         #redirect_to :controller => 'sessions', :action => 'new' 
-        puts "this is else of check_session_for_new_loign in sessions controller "
+    def check_session_for_new_loign
+        if session[:user_id]
+          redirect_to bookstores_url, notice: 'You are Already Login'
+        else  
+           # redirect_to  page_index_url, alert: 'login is required.' 
+           #edirect_to bookstores_url
+           #redirect_to :controller => 'sessions', :action => 'new' 
+          puts "this is else of check_session_for_new_loign in sessions controller "
 
-      end  
-   
-  end
+        end  
+     
+    end
 
 end

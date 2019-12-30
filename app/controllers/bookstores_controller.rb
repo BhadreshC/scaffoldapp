@@ -81,15 +81,12 @@ class BookstoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bookstore_params
-      params.require(:bookstore).permit(:title, :author, :price, :EmailAddress, :publishedyear, :ISBN)
+      params.require(:bookstore).permit(:title, :author_name, :price, :EmailAddress, :publishedyear, :ISBN, :author_id, :name)
     end
-
 
     def check_session
       if session[:user_id]
-          #
-         # puts "bhadftgghjbghjhhkjhkjhhkjhkjhkhjh"
-          #redirect_to 
+         
       else  
           redirect_to  page_index_url, notice: 'login is required.' 
       end 

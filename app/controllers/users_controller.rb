@@ -50,25 +50,25 @@ class UsersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
+      def set_user
+        @user = User.find(params[:id])
+      end
 
-    # Only allow a trusted parameter "white list" through.
-    def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation)
-    end
+      # Only allow a trusted parameter "white list" through.
+      def user_params
+        params.require(:user).permit(:username, :email, :password, :password_confirmation)
+      end
 
-    def disable_new_signup_for_exiting_login
+      def disable_new_signup_for_exiting_login
 
-      if session[:user_id]
-        redirect_to bookstores_url, notice: 'After Logout You can SignUp '
-      else  
+        if session[:user_id]
+          redirect_to bookstores_url, notice: 'After Logout You can SignUp '
+        else  
+          
+          puts "--------------this is else of  disable_new_signup_for_exiting_login in users controller --------------"
+
+        end 
         
-        puts "--------------this is else of  disable_new_signup_for_exiting_login in users controller --------------"
-
-      end 
-      
-    end
+      end
     
 end

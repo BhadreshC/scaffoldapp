@@ -7,14 +7,11 @@ class PageController < ApplicationController
 
   end
 
-
   private
   	def check_session_for_redirect
   		if session[:user_id]
          puts "--------------------------------------------session is prseent ----------------------------------------------------------------"
-         redirect_to :controller => 'bookstores', :action => 'index'	
-
-        # redirect_to "http://www.rubyonrails.org"
+         redirect_to :controller => 'bookstores', :action => 'index'
  		
       	else  
           	 puts "	--------------------------------------------sessioin is no more ------------------------------------------------------	"

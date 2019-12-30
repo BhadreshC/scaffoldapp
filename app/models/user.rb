@@ -11,7 +11,7 @@ class User < ApplicationRecord
             format: {  
               with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i  
             }  
-  def to_s  
-    "#{username}"  
-  end  
+    def to_s  
+      "#{username}"  
+    end  
 end

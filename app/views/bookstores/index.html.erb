@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Author</th>
+      <th>Author_name</th>
       <th>EmailAddress</th>
       <th>Price</th>
       <th>Publishedyear</th>
@@ -20,7 +20,7 @@
     <% @bookstores.each do |bookstore| %>
       <tr>
         <td><%= bookstore.title %></td>
-        <td><%= bookstore.author %></td>
+        <td><%= bookstore.author_name %></td>
         <td><%= bookstore.EmailAddress %></td>
         <td><%= bookstore.price %></td>
         <td><%= bookstore.publishedyear %></td>
