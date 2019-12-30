@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      redirect_to bookstores_url, notice: 'User was successfully created, You are redirect to list of bookstores.'
+      redirect_to books_url, notice: 'User was successfully created, You are redirect to list of books.'
     else
       render :new
     end
@@ -62,7 +62,7 @@ class UsersController < ApplicationController
       def disable_new_signup_for_exiting_login
 
         if session[:user_id]
-          redirect_to bookstores_url, notice: 'After Logout You can SignUp '
+          redirect_to books_url, notice: 'After Logout You can SignUp '
         else  
           
           puts "--------------this is else of  disable_new_signup_for_exiting_login in users controller --------------"

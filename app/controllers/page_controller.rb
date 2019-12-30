@@ -11,7 +11,7 @@ class PageController < ApplicationController
   	def check_session_for_redirect
   		if session[:user_id]
          puts "--------------------------------------------session is prseent ----------------------------------------------------------------"
-         redirect_to :controller => 'bookstores', :action => 'index'
+         redirect_to :controller => 'books', :action => 'index'
  		
       	else  
           	 puts "	--------------------------------------------sessioin is no more ------------------------------------------------------	"

@@ -4,39 +4,39 @@
 
 <p>
   <strong>Title:</strong>
-  <%= @bookstore.title %>
+  <%= @book.title %>
 </p>
 
 <p>
   <strong>Author:</strong>
-  <%= @bookstore.author_name %>
+  <%= @book.author_name %>
 </p>
 
 <p>
   <strong>EmailAddress:</strong>
-  <%= @bookstore.EmailAddress %>
+  <%= @book.EmailAddress %>
 </p>
 
 <p>
   <strong>Price:</strong>
-  <%= @bookstore.price %>
+  <%= @book.price %>
 </p>
 
 
 <p>
   <strong>Slug:</strong>
-  <%= @bookstore.slug %>
+  <%= @book.slug %>
 </p>
 
 <p>
   <strong>Publishedyear:</strong>
-  <%= @bookstore.publishedyear %>
+  <%= @book.publishedyear %>
 </p>
 
 <p>
   <strong>Isbn:</strong>
-  <%= @bookstore.ISBN %>
+  <%= @book.ISBN %>
 </p>
 
-<%= link_to 'Edit', edit_bookstore_path(@bookstore) %> |
-<%= link_to 'Back', bookstores_path %>
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>

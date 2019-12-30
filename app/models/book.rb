@@ -1,4 +1,4 @@
-class Bookstore < ApplicationRecord
+class Book < ApplicationRecord
   belongs_to :author
     
 #create the initialize call back mehtod 

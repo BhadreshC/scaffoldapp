@@ -10,7 +10,9 @@
   </head>
 
   <body>
-
+      <% p "=============" %>
+      <% p session[:user_id]%>
+      <% p "=============" %>
       <div id="user_header" align="right">  
         <font size="5"> <% if current_user %>  
           Logged in as <%= current_user.email %>.  

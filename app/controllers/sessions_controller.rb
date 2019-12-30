@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
      puts  cookies[:password]
 
 
-      redirect_to bookstores_url, notice: 'Logged in!'
+      redirect_to books_url, notice: 'Logged in!'
       
     else   
       render :new   
@@ -37,10 +37,10 @@ class SessionsController < ApplicationController
   private 
     def check_session_for_new_loign
         if session[:user_id]
-          redirect_to bookstores_url, notice: 'You are Already Login'
+          redirect_to books_url, notice: 'You are Already Login'
         else  
            # redirect_to  page_index_url, alert: 'login is required.' 
-           #edirect_to bookstores_url
+           #edirect_to books_url
            #redirect_to :controller => 'sessions', :action => 'new' 
           puts "this is else of check_session_for_new_loign in sessions controller "
 
