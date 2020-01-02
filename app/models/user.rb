@@ -1,4 +1,11 @@
 class User < ApplicationRecord
+#------------------------------
+has_many :books #processing 
+
+#has_and_belongs_to_many :books # Not working 
+has_many :addresses, as: :addressable #succeessfull 
+ 
+#------------------------------
   has_secure_password
    
   validates :username,  
@@ -15,3 +22,4 @@ class User < ApplicationRecord
       "#{username}"  
     end  
 end
+                                                                            

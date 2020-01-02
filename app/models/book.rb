@@ -1,18 +1,24 @@
 class Book < ApplicationRecord
-  belongs_to :author
-    
+#------------------------------
+#has_many :users #processing
+  belongs_to :user
+# has_and_belongs_to_many :users# NOT WORKING 
+#------------------------------
+
+belongs_to :author #succeessfull
+
 #create the initialize call back mehtod 
 # its output is display on the terminal
 	
-	after_initialize do |bookstore|
+	after_initialize do |book|
       puts "You have initialized an object!"
     end
 
-  after_touch do |bookstore|
+  after_touch do |booke|
     	puts "You have touched an object"
   	end
  
-  after_find do |bookstore|
+  after_find do |book|
       puts "You have found an object!"
     end
 
@@ -22,7 +28,7 @@ class Book < ApplicationRecord
    		puts 'Article destroyed'
   	end
  	
- 	before_save { |bookstore| bookstore.title = bookstore.title.downcase }
+ 	before_save { |book| book.title = book.title.downcase }
 
 	#attribute :slug, :string, default: str
 
