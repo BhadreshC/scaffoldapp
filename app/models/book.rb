@@ -1,4 +1,5 @@
 class Book < ApplicationRecord
+  # delegate :example, :example2,  to: :user
 #------------------------------
 #has_many :users #processing
   belongs_to :user
@@ -9,8 +10,7 @@ class Book < ApplicationRecord
 
 #create the initialize call back mehtod 
 # its output is display on the terminal
-	
-	after_initialize do |book|
+		after_initialize do |book|
       puts "You have initialized an object!"
     end
 
@@ -47,6 +47,7 @@ class Book < ApplicationRecord
 
   after_update_commit :updated_book_saved_to_db
 
+
   	private
  			  def updated_book_saved_to_db
    			 	puts 'Book is updated to database'
@@ -71,6 +72,4 @@ class Book < ApplicationRecord
 
 
 	validates :publishedyear, :numericality => { greater_than_or_equal_to: 2010, less_than: 2020 }
-
-
 end

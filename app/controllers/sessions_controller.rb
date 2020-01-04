@@ -2,8 +2,6 @@ class SessionsController < ApplicationController
   
   before_action :check_session_for_new_loign,  only: [:new]
 
-
-
   def new
     params[:email] = cookies[:email] unless cookies[:email].nil?
   end

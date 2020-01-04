@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+   include UsersHelper
 #------------------------------
 has_many :books,dependent: :destroy #processing 
 
@@ -21,5 +22,13 @@ validates_uniqueness_of :username
     def to_s  
       "#{username}"  
     end  
+
+    #  def example 
+    #   'nbhbhb     vcvvvvv           hb'
+    #  end
+
+    #  def example_two 
+    #   'nbhbvvvvvvvvvvvvvvvvvvvvvvvhbhb'
+    # end 
 end
                                                                             

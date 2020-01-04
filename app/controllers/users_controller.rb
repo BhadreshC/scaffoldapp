@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+ 
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :disable_new_signup_for_exiting_login,  only: [:new , :index]
   
@@ -10,6 +11,7 @@ class UsersController < ApplicationController
   def index
 
     @users = User.all
+   
   end
    
   # GET /users/1

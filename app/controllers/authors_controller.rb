@@ -5,7 +5,8 @@ class AuthorsController < ApplicationController
 
   # GET /authors  
   def index
-    @authors = Author.all
+    @authors = Author.order(:id)
+  
    # @instance_variable = ModelClass.all
   end
   
@@ -31,7 +32,7 @@ class AuthorsController < ApplicationController
   # POST /authors
   def create
     @author = Author.new(author_params)
-    @ad = Authordetail.new  () 
+    @ad = Authordetail.new() 
     if @author.save
       redirect_to @author, notice: 'Author was successfully created.'
     else

@@ -1,7 +1,4 @@
 class BooksController < ApplicationController
-
-
-
   before_action :check_session
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
@@ -9,8 +6,6 @@ class BooksController < ApplicationController
   # GET /bookstores.json
   def index
     @books= Book.all
-  
-    
   end
 
   # GET /bookstores/1
@@ -76,24 +71,24 @@ class BooksController < ApplicationController
     end
   end
 
-  private
+private
     # Use callbacks to share common setup or constraints between actions.
-    def set_book
-      @book = Book.find(params[:id])
-    end
+  def set_book
+    @book = Book.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def book_params
-      params.require(:book).permit(:title, :price, :language, :publishedyear, :ISBN, :author_id, :name, :user_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def book_params
+    params.require(:book).permit(:title, :price, :language, :publishedyear, :ISBN, :author_id, :name, :user_id)
+  end
 
-    def check_session
-      if session[:user_id]
-         
-      else  
-          redirect_to  page_index_url, notice: 'login is required.' 
-      end 
-    end
+  def check_session
+    if session[:user_id]
+       
+    else  
+        redirect_to  page_index_url, notice: 'login is required.' 
+    end 
+  end
     
 end
 
