@@ -10,5 +10,27 @@
   <%= @author.address %>
 </p>
 
+
+<p>
+  <strong>Email address:</strong>
+  <%= @ad.try(:email) %>
+</p>
+
+
+<p>
+  <strong>Author Bio:</strong>
+  <%= @ad.try(:bio) %>
+</p>
+
+<p>
+  <strong>Mobile_No:</strong>
+  <%= @ad.try(:mobile_No) %>
+</p>
+
 <%= link_to 'Edit', edit_author_path(@author) %> |
-<%= link_to 'Back', authors_path %>
+<%= link_to 'Back', authors_path %> |
+
+
+<%= link_to 'Edit author details', edit_authordetail_path(@ad)%>
+
+

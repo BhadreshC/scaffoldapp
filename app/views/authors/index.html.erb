@@ -12,8 +12,11 @@
   </thead>
 
   <tbody>
+  
     <% @authors.each do |author| %>
+   
       <tr>
+
         <td><%= author.name %></td>
         <td><%= author.address %></td>
         <td><%= link_to 'Show', author %></td>
@@ -25,5 +28,7 @@
 </table>
 
 <br>
-
-<%= link_to 'New Author', new_author_path %>
+<h2>
+<%= link_to 'New Author', new_author_path %> ||
+<%= link_to 'BACK ', books_path %> 
+</h2>

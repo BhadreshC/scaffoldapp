@@ -9,13 +9,16 @@ class BooksController < ApplicationController
   # GET /bookstores.json
   def index
     @books= Book.all
+  
+    
   end
 
   # GET /bookstores/1
   # GET /bookstores/1.json
   def show  
     @books = Book.find(params[:id])
-       puts @books.as_json
+    @authorname= @book.author
+
   end
 
   # GET /bookstores/new
@@ -81,7 +84,7 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :author_name, :price, :EmailAddress, :publishedyear, :ISBN, :author_id, :name, :user_id)
+      params.require(:book).permit(:title, :price, :language, :publishedyear, :ISBN, :author_id, :name, :user_id)
     end
 
     def check_session

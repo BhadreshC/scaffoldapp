@@ -17,10 +17,6 @@
     <%= form.text_field :title %>
   </div>
 
-   <div class="field">
-    <%= form.label :author_name %>
-    <%= form.text_field :author_name %>
-  </div>
   
   <div class="field">
     <%= form.label :select_author%>
@@ -38,10 +34,14 @@
     <%= form.collection_select :user_id, User.order(:username),:id,:username %>
   </div>    
 
-    <div class="field">
-    <%= form.label :EmailAddress %>
-    <%= form.email_field :EmailAddress, required: true %>
-  </div>
+    
+ <div class="field">
+    <%= form.label :language %>
+  
+    <%= form.select :language, ["HINDI","ENGLISH","GUJRATI"]%>
+  </div>  
+  
+
 
   <div class="field">
     <%= form.label :publishedyear %>

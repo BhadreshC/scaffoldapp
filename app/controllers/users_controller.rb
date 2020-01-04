@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :disable_new_signup_for_exiting_login,  only: [:new]
+  before_action :disable_new_signup_for_exiting_login,  only: [:new , :index]
+  
+  #before_action :disable_new_signup_for_exiting_login,  only: [:new]
+  
   #after_action :redirect_user_to_bookstore ,only: [:index, :show]
 
   # GET /users
   def index
+
     @users = User.all
   end
    
@@ -15,6 +19,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+
   end
 
   # GET /users/1/edit
@@ -27,7 +32,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      redirect_to books_url, notice: 'User was successfully created, You are redirect to list of books.'
+      redirect_to books_url, notice: 'User was successfully created, You are redirect to list of Books'
     else
       render :new
     end
@@ -62,7 +67,7 @@ class UsersController < ApplicationController
       def disable_new_signup_for_exiting_login
 
         if session[:user_id]
-          redirect_to books_url, notice: 'After Logout You can SignUp '
+          redirect_to books_url, notice: 'AFTER LOGOUT YOU MAY VISITT ANY PAGE.!! '
         else  
           
           puts "--------------this is else of  disable_new_signup_for_exiting_login in users controller --------------"

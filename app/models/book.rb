@@ -2,10 +2,10 @@ class Book < ApplicationRecord
 #------------------------------
 #has_many :users #processing
   belongs_to :user
-# has_and_belongs_to_many :users# NOT WORKING 
-#------------------------------
+# has_and_belongs_to_many :users# NOT WORKING s
+#------------------------------ 
 
-belongs_to :author #succeessfull
+  belongs_to :author #succeessfull 
 
 #create the initialize call back mehtod 
 # its output is display on the terminal
@@ -66,8 +66,7 @@ belongs_to :author #succeessfull
 
 	validates :ISBN , presence:true, length: {minimum: 14, maximum: 15}
 
-	validates :EmailAddress, presence: true 
-
+	
 	validates :publishedyear, presence: true, format: {with: /(19|20)\d{2}/i }
 
 

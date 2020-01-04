@@ -1,10 +1,10 @@
 class User < ApplicationRecord
 #------------------------------
-has_many :books #processing 
+has_many :books,dependent: :destroy #processing 
 
 #has_and_belongs_to_many :books # Not working 
 has_many :addresses, as: :addressable #succeessfull 
- 
+validates_uniqueness_of :username
 #------------------------------
   has_secure_password
    
